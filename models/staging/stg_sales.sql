@@ -1,6 +1,8 @@
 {{ config(materialized='view') }}
 
--- Clean and normalize the sales table
+-- STG: sales
+-- Purpose: Normalize raw sales_recrutement and provide product-level lines.
+-- Keep transformations minimal: cast types, remove null dates.
 select
   date_date,
   cast(customer_id as int64) as customer_id,

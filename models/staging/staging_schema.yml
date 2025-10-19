@@ -1,0 +1,19 @@
+version: 2
+
+# Source definitions: document where the raw data comes from.
+sources:
+  - name: Astrafy
+    database: sage-tribute-474816-g2     # GCP project ID, explicit to avoid ambiguity
+    schema: Astrafy                      # source dataset
+    tables:
+      - name: orders_recrutement
+        description: "Raw orders table uploaded from Excel"
+      - name: sales_recrutement
+        description: "Raw sales lines uploaded from Excel"
+
+models:
+  - name: stg_orders
+    description: "Staging view for orders. Casts types and excludes null dates."
+
+  - name: stg_sales
+    description: "Staging view for sales lines. Product-level granularity and typed columns."

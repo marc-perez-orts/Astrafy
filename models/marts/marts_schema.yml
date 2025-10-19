@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: ex_1_total_orders
+    description: "Total unique orders in 2023. Useful for high-level KPI."
+
+  - name: ex_2_orders_per_month
+    description: "Monthly orders and revenue for 2023. Good for trend analysis."
+    columns:
+      - name: month
+        description: "Month in YYYY-MM format."
+
+  - name: ex_3_avg_products_per_order
+    description: "Average number of distinct products per order (monthly)."
+
+  - name: ex_4_orders_with_qty
+    description: "Orders with total quantity of products and aggregated sales lines."
+
+  - name: ex_5_order_segmentation
+    description: "Customer order segmentation (New / Returning / VIP) calculated using 12-month lookback."
+
+  - name: ex_6_orders_2023_with_segmentation
+    description: "Final enriched orders table for 2023 including order_segment for reporting."

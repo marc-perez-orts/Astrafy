@@ -1,6 +1,9 @@
 {{ config(materialized='table') }}
 
--- Average number of products per order for each month in 2023
+-- EX 3: Average number of distinct products per order (monthly)
+-- Approach:
+-- 1) count distinct product_id per order (product count per order)
+-- 2) join to orders to associate month and compute average per month
 with products_per_order as (
   select
     order_id,
@@ -9,17 +12,18 @@ with products_per_order as (
   where extract(year from date_date) = 2023
   group by order_id
 ),
-orders_monthly as (
+orders_with_month as (
   select
-    extract(month from s.date_date) as month,
+    o.order_id,
+    format_date('%Y-%m', o.date_date) as month,
     p.product_count
-  from {{ ref('stg_sales') }} s
+  from {{ ref('stg_orders') }} o
   join products_per_order p using (order_id)
-  where extract(year from s.date_date) = 2023
+  where extract(year from o.date_date) = 2023
 )
 select
   month,
   avg(product_count) as avg_products_per_order
-from orders_monthly
+from orders_with_month
 group by month
 order by month
