@@ -83,13 +83,6 @@ These files define:
 ### 💶 Currency Formatting
 All monetary measures (`total_revenue`, `avg_order_value`, `net_sales`) are formatted in **euros (€)** for consistency across LookML and Looker Studio.
 
-### ✅ Validation
-The LookML syntax was validated using the LookML parser:
-```bash
-npx lookml-parser lookml/
-```
-
-No errors were found, confirming the model is ready for deployment.
 
 ---
 
@@ -106,22 +99,6 @@ In the **`dashboard_mockup/`** folder, you will find:
 You can also view the published Looker Studio dashboard here:  
 👉 [**Astrafy Looker Studio Report**](https://lookerstudio.google.com/reporting/e01e6a52-ddef-4eda-8928-0e7ded01eb76)
 
-### 📈 Dashboard Structure
-| Chart | Dimension(s) | Metric(s) | Notes |
-|-------|---------------|-----------|-------|
-| **Scorecard 1** | — | Total Revenue (€) | Shows total net sales for 2023 |
-| **Scorecard 2** | — | Average Order Value (€) | AOV across all orders |
-| **Line Chart** | `order_date (Month)` | Orders + Revenue | Dual axis for clear trend comparison |
-| **Bar Chart** | `order_segment` | Revenue (€) | Breakdown by customer segment |
-| **Table** | `customer_id`, `order_segment` | Revenue (€), AOV (€) | Customer-level details |
-
-### 🎨 Formatting
-- **Currency:** Euro (€)  
-
-
-### 🔧 Filters
-- **Date Range (2023 only)**  
-- **Customer Segment**  
 
 ---
 
