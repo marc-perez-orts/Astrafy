@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 
--- Table: one line per order, including product quantity
+-- Orders (2022–2023) with total quantity of products per order
 with product_counts as (
     select
         order_id,

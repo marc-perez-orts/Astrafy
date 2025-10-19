@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 
--- Calculate average number of products per order for each month in 2023
+-- Average number of products per order for each month in 2023
 with products_per_order as (
   select
     order_id,

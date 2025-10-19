@@ -1,12 +1,11 @@
 {{ config(materialized='table') }}
 
--- Compute the number of past orders within 12 months for each order
+-- Customer segmentation based on number of orders in the past 12 months
 with customer_orders as (
     select
         customer_id,
         order_id,
         date_date,
-        -- Count how many previous orders (including current) in the last 12 months
         (
             select count(*)
             from {{ ref('stg_orders') }} o2

@@ -1,12 +1,13 @@
 # Astrafy Take-Home Challenge
 
-## Part 1 – dbt + BigQuery
-All dbt models are under `/models`.
-They build the following datasets:
+## Overview
+This repository contains my full solution for the **Astrafy Looker / BI Engineer Take-Home Challenge**.
 
-- `Astrafy_staging`: staging tables (cleaned raw data)
-- `Astrafy_marts`: analytical tables for exercises 1–6
+### Part 1 – dbt + BigQuery
+The `/models/` folder includes:
+- `staging/`: cleaned raw data models
+- `marts/`: analytical models for exercises 1–6
 
 To run:
 ```bash
-dbt run
+dbt build

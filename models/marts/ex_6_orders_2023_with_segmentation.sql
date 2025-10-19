@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 
--- Merge all order details with segmentation
+-- 2023 orders with customer segmentation
 select
     o.date_date,
     o.customer_id,
