@@ -34,7 +34,6 @@ These tables were cleaned and joined to create the final analytics layer under t
 sage-tribute-474816-g2.Astrafy_marts
 
 perl
-Copiar código
 
 ### 🧾 Key Models
 | Model | Description |
@@ -57,7 +56,6 @@ dbt build     # Execute all transformations and tests
 All dbt models are materialized into:
 
 yaml
-Copiar código
 bigquery → dataset: Astrafy_marts
 This final layer is used as the source for the LookML model and Looker Studio dashboard.
 
@@ -69,7 +67,6 @@ Define a semantic model in LookML to expose the dbt-transformed tables as reusab
 The LookML files are located in the lookml/ directory:
 
 pgsql
-Copiar código
 lookml/
 ├── astrafy.model.lkml
 └── orders.view.lkml
@@ -85,8 +82,7 @@ All monetary measures (total_revenue, avg_order_value, net_sales) are formatted 
 ✅ Validation
 The LookML syntax was validated using the LookML parser:
 
-bash
-Copiar código
+
 npx lookml-parser lookml/
 No errors were found, confirming the model is ready for deployment.
 
@@ -138,15 +134,7 @@ GitHub delivery	✅ Completed	Repository ready for review
 End of Challenge – Marc Pérez Orts (2025)
 🚀 End-to-end BI solution with dbt, BigQuery, LookML, and Looker Studio.
 
-yaml
-Copiar código
 
 ---
 
-✅ Copia **todo el bloque** (entre los backticks ```markdown … ```), pégalo directamente en tu `README.md`, guarda y haz:  
-
-```bash
-git add README.md
-git commit -m "Final README with LookML and Dashboard sections"
-git push
 ```
