@@ -1,0 +1,29 @@
+name: 'Astrafy'
+version: '1.0.0'
+profile: 'Astrafy'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  Astrafy:
+    +materialized: view
+    +persist_docs:
+      relation: true
+      columns: true
+
+    staging:
+      +schema: staging
+      +materialized: view
+
+    marts:
+      +schema: marts
+      +materialized: table

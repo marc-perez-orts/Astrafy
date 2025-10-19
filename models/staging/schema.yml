@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: Astrafy
+    tables:
+      - name: orders_recrutement
+      - name: sales_recrutement
+
+models:
+  - name: stg_orders
+    description: "Cleaned and normalized orders table."
+  - name: stg_sales
+    description: "Cleaned and normalized sales table with product-level details."
