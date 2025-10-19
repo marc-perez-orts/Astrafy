@@ -1,19 +1,28 @@
-# Astrafy Take-Home Challenge — Final Submission
-
+# 💡 Astrafy Take-Home Challenge  
 **Candidate:** Marc Pérez Orts  
-**Role applied:** Looker Engineer / BI Engineer  
-**Date:** October 2025
+**Position:** BI Engineer / Looker Engineer  
 
 ---
 
-## Summary
-This repository contains a complete solution for the Astrafy take-home challenge:
-- **Part 1:** dbt models and BigQuery dataset building.
-- **Part 2:** LookML semantic layer (validated locally).
-- **Part 3:** Dashboard design and Looker Studio implementation instructions.
+## 🧱 Part 1 – Data Modeling with dbt + BigQuery
+This section builds the data foundations used for analysis.  
+dbt models clean, transform, and aggregate raw data from two Excel sources uploaded into BigQuery:  
+- `orders_recrutement`  
+- `sales_recrutement`
 
-All code is commented to explain design choices, assumptions and edge-case handling.
+### 🗂️ Key dbt Models
+| Model | Description |
+|--------|--------------|
+| `stg_orders` | Staging view standardizing raw orders data. |
+| `stg_sales` | Staging view standardizing raw sales data. |
+| `ex_1_total_orders` | Aggregates the total count of orders. |
+| `ex_2_orders_per_month` | Monthly revenue and order trends. |
+| `ex_3_avg_products_per_order` | Calculates average products per order. |
+| `ex_4_orders_with_qty` | Combines quantity and sales data per order. |
+| `ex_5_order_segmentation` | Segments customers (New / Returning / VIP). |
+| `ex_6_orders_2023_with_segmentation` | Final dataset combining segmentation + 2023 filter. |
 
----
-
-## Project structure (top-level)
+### 🧾 Execution
+```bash
+dbt debug        # Verify connection to BigQuery
+dbt build        # Build all models and run tests

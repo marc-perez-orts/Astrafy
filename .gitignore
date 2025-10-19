@@ -1,22 +1,17 @@
-# dbt
+# dbt build folders
 target/
 dbt_packages/
 
-# OS / IDE
+# IDE / OS
 .DS_Store
-.idea/
 .vscode/
+.idea/
 
-# Credentials (do not commit)
-profiles.yml
+# Credentials
 *.json
-*.key
-*.pem
+profiles.yml
 
-# Node / npx caches
+# Node and temp
 node_modules/
-
-# Local data / exports
 *.csv
 *.xlsx
-screenshots/*.png

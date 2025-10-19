@@ -1,17 +1,15 @@
 # ==========================================================
 # VIEW FILE: orders.view.lkml
-# Project: Astrafy Conversational Analytics
-# Part 2: Defines all dimensions and measures for the Orders model.
-# Includes euro (€) currency formatting for all monetary fields.
+# Defines dimensions and measures for the Orders model.
+# Includes euro (€) formatting for all monetary fields.
 # ==========================================================
 
 view: orders {
   sql_table_name: `sage-tribute-474816-g2.Astrafy_marts.ex_6_orders_2023_with_segmentation` ;;
 
-  # ==========================================================
+  # =========================
   # DIMENSIONS
-  # ==========================================================
-
+  # =========================
   dimension: order_id {
     primary_key: yes
     type: number
@@ -28,20 +26,19 @@ view: orders {
   dimension: order_segment {
     type: string
     sql: ${TABLE}.order_segment ;;
-    description: "Customer segment for the order: New, Returning, or VIP."
+    description: "Customer segment: New, Returning, or VIP."
   }
 
   dimension_group: order_date {
     type: time
     timeframes: [date, week, month, quarter, year]
     sql: ${TABLE}.date_date ;;
-    description: "Order date available in multiple timeframes."
+    description: "Order date, available in multiple timeframes."
   }
 
-  # ==========================================================
-  # MEASURES (formatted in euros)
-  # ==========================================================
-
+  # =========================
+  # MEASURES (€ formatting)
+  # =========================
   measure: net_sales {
     type: sum
     sql: ${TABLE}.net_sales ;;
@@ -72,6 +69,6 @@ view: orders {
     type: number
     sql: ${total_revenue} / nullif(${total_orders}, 0) ;;
     value_format: "#,##0.00 €"
-    description: "Average order value (AOV) calculated as revenue divided by total orders."
+    description: "Average order value (AOV) calculated as revenue divided by orders."
   }
 }

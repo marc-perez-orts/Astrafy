@@ -1,5 +1,9 @@
+# ==============================================================
+# DBT PROJECT CONFIGURATION
+# ==============================================================
 name: 'Astrafy'
 version: '1.0.0'
+
 profile: 'Astrafy'
 
 model-paths: ["models"]
@@ -15,15 +19,10 @@ clean-targets:
 
 models:
   Astrafy:
-    +materialized: view
-    +persist_docs:
-      relation: true
-      columns: true
-
+    +materialized: table
     staging:
-      +schema: staging
+      +schema: Astrafy_staging
       +materialized: view
-
     marts:
-      +schema: marts
+      +schema: Astrafy_marts
       +materialized: table
