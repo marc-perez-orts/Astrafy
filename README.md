@@ -99,12 +99,12 @@ No errors were found, confirming the model is ready for deployment.
 To visualize the analytical data through an interactive dashboard that provides insights into order volume, revenue, and customer segmentation for 2023.
 
 ### 🗂️ Files
-In the **`dashboard-mockup/`** folder, you will find:
-- **`Astrafy_Dashboard_Mockup.pdf`** → A visual mockup showing how the dashboard would look in Looker Studio, including layout, charts, and filters.
+In the **`dashboard_mockup/`** folder, you will find:
+- **`Part_3__Design_Challenge.pdf`** → A visual mockup showing how the dashboard would look in Looker Studio, including layout, charts, and filters.
 
 ### 🔗 Live Dashboard
 You can also view the published Looker Studio dashboard here:  
-👉 [**Astrafy Looker Studio Report**](https://lookerstudio.google.com/reporting/your-report-id)
+👉 [**Astrafy Looker Studio Report**](https://lookerstudio.google.com/reporting/e01e6a52-ddef-4eda-8928-0e7ded01eb76)
 
 ### 📈 Dashboard Structure
 | Chart | Dimension(s) | Metric(s) | Notes |
@@ -117,10 +117,7 @@ You can also view the published Looker Studio dashboard here:
 
 ### 🎨 Formatting
 - **Currency:** Euro (€)  
-- **Decimal separator:** `,`  
-- **Thousands separator:** `.`  
-- Example: `€ 12.345,67`  
-- **Colors:** Blue tones for orders, green tones for revenue  
+
 
 ### 🔧 Filters
 - **Date Range (2023 only)**  
